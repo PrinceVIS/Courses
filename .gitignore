@@ -1,13 +1,7 @@
 **/.idea/*
 
 # Downloaded Materials #
-/HW1/
-/HW2/
-*.pdf
-*.doc
-*.docx
-*.pptx
-*.iml
+/Downloads/
 
 # Package Files #
 *.jar
