@@ -1,6 +1,8 @@
+package courses.mvc;
+
 public class View {
-    public static final String WRONG_INPUT =
-            "Wrong input! If it's number - it's out of range!";
+    public static final String WRONG_INPUT = "Wrong input! Please type number!";
+    public static final String WRONG_NUMBER = "Number out of range!";
     public static final String WIN =
             "Congratulations! You've guessed the number! ";
     public static final String GUESS = "Try to guess the number: ";
