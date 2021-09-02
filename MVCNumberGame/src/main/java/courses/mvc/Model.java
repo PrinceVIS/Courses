@@ -1,3 +1,5 @@
+package courses.mvc;
+
 public class Model {
     private final int randomNumber;
     private int minNumber = 0;

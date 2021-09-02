@@ -1,3 +1,5 @@
+package courses.mvc;
+
 import java.util.Scanner;
 
 public class Controller {
@@ -20,18 +22,26 @@ public class Controller {
 
     private int scanNumber(Scanner scanner) {
         int number = model.getMinNumber();
+        boolean valid = false;
         do {
             view.printRange(model.getMinNumber(), model.getMaxNumber());
             view.printMessage(View.GUESS);
             if (scanner.hasNextInt()){
                 number = scanner.nextInt();
+                valid = validateNumber(number);
+                if (!valid){
+                    view.printMessage(View.WRONG_NUMBER);
+                }
             } else {
                 view.printMessage(View.WRONG_INPUT);
-                view.printRange(model.getMinNumber(), model.getMaxNumber());
             }
             scanner.nextLine();
-        } while (number <= model.getMinNumber() || number >= model.getMaxNumber());
+        } while (!valid);
         return number;
+    }
+
+    private boolean validateNumber(int number) {
+        return number > model.getMinNumber() && number < model.getMaxNumber();
     }
 
     private void processNumber(int number) {
