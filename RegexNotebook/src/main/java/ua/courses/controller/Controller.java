@@ -6,12 +6,12 @@ import ua.courses.view.View;
 import java.util.Scanner;
 
 import static ua.courses.controller.ResourceBundleController.regexpBundle;
-import static ua.courses.view.StringConstants.FIRST_NAME;
-import static ua.courses.view.StringConstants.FULL_NAME_REGEXP;
+import static ua.courses.view.StringConstants.*;
 
 public class Controller {
     private final Model model;
     private final View view;
+    private static final Scanner SCANNER = new Scanner(System.in);
 
 
     public Controller(Model model, View view) {
@@ -20,26 +20,20 @@ public class Controller {
     }
 
     public void processUser() {
-        inputStringValueWithScanner(FIRST_NAME, regexpBundle.getString(FULL_NAME_REGEXP));
+        model.setLastName(inputString(LAST_NAME,
+                regexpBundle.getString(FULL_NAME_REGEXP)));
+        model.setFirstName(inputString(FIRST_NAME,
+                regexpBundle.getString(FULL_NAME_REGEXP)));
+        model.setPatronymic(inputString(PATRONYMIC,
+                regexpBundle.getString(FULL_NAME_REGEXP)));
     }
 
-//    public void inputNote() {
-//        String str = (String.valueOf(View.resource_bundle.getLocale()).equals("ua"))
-//                ? REGEX_NAME_UKR : REGEX_NAME_LAT;
-//
-//        this.firstName = inputStringValueWithScanner
-//                (FIRST_NAME, str);
-//        this.login = inputStringValueWithScanner
-//                (LOGIN_DATA, REGEX_LOGIN);
-//    }
-
-    String inputStringValueWithScanner(String message, String regex) {
-        Scanner scanner = new Scanner(System.in);
-        view.printStringInput(message);
-        String res;
-        while (!(scanner.hasNext() && (res = scanner.next()).matches(regex))) {
-            view.printWrongStringInput(message);
+    private String inputString(String message, String regex) {
+        view.printInputData(message);
+        String result;
+        while (!(SCANNER.hasNext() && (result = SCANNER.next()).matches(regex))) {
+            view.printWrongInput(message);
         }
-        return res;
+        return result;
     }
 }
