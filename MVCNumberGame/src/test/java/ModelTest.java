@@ -1,13 +1,13 @@
-import courses.mvc.Controller;
 import courses.mvc.Model;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ModelTest {
 
-    Model model = new Model();
+    Model model;
 
     @Before
     public void setUp() {
