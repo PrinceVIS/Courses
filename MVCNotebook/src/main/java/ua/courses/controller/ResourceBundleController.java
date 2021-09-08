@@ -12,4 +12,7 @@ public class ResourceBundleController {
 
     public static final ResourceBundle resourceBundle = ResourceBundle.getBundle(
             BUNDLE_NAME_MESSAGES, bundlesLocale);
+
+    public static final ResourceBundle databaseBundle = ResourceBundle.getBundle(
+            BUNDLE_NAME_DATABASE, Locale.ENGLISH);
 }
