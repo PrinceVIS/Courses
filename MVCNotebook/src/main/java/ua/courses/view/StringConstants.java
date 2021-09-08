@@ -14,5 +14,7 @@ public interface StringConstants {
     String LAST_NAME = "last.name.data";
     String FIRST_NAME = "first.name.data";
     String PATRONYMIC = "patronymic.data";
+    String LOGIN = "login.data";
     String FULL_NAME_REGEXP = "full.name.regexp";
+    String LOGIN_REGEXP = "login.regexp";
 }

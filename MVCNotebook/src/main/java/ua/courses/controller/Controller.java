@@ -26,6 +26,8 @@ public class Controller {
                 regexpBundle.getString(FULL_NAME_REGEXP)));
         model.setPatronymic(inputString(PATRONYMIC,
                 regexpBundle.getString(FULL_NAME_REGEXP)));
+        model.setLogin(inputString(LOGIN,
+                regexpBundle.getString(LOGIN_REGEXP)));
     }
 
     private String inputString(String message, String regex) {
