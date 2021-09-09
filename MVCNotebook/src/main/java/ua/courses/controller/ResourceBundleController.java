@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 import static ua.courses.view.StringConstants.*;
 
 public class ResourceBundleController {
-    private static final Locale bundlesLocale = new Locale(LOCALE_UA, "UA");
+    private static final Locale bundlesLocale = new Locale(LOCALE_EN);
     public static final ResourceBundle regexpBundle = ResourceBundle.getBundle(
             BUNDLE_NAME_REGEXP, bundlesLocale);
 

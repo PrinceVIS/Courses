@@ -14,10 +14,10 @@ public class Main {
     public static void main(String[] args) {
         Model model = new Model();
         View view = new View();
-        Controller controller = new Controller(model, view);
         Connector connector = new Connector();
+        Controller controller = new Controller(model, view, connector);
         connector.initConnection();
-//        controller.processUser();
+        controller.processUser();
         connector.closeConnection();
     }
 }

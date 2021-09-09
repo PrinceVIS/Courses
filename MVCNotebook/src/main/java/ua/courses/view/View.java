@@ -14,11 +14,14 @@ public class View {
         System.out.println(message);
     }
 
+    public void printWrongMessage() {
+        printMessage(resourceBundle.getString(WRONG_INPUT));
+    }
+
     public void printInputData(String message) {
         printMessage(resourceBundle.getString(INPUT)
                 + resourceBundle.getString(message));
     }
-
     public void printWrongInput(String message) {
         printMessage(resourceBundle.getString(WRONG_INPUT)
                 + resourceBundle.getString(INPUT)

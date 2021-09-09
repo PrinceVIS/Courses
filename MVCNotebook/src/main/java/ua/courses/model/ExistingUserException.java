@@ -1,7 +1,6 @@
 package ua.courses.model;
 
 public class ExistingUserException extends Exception{
-    public ExistingUserException(String message) {
-        super(message);
+    public ExistingUserException() {
     }
 }
