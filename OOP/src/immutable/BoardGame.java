@@ -3,17 +3,14 @@ package immutable;
 public final class BoardGame {
     private final String name;
     private final String playTime;
+    private final PlayersCount playersCount;
 
-    public BoardGame(String name, String playTime) {
+    public BoardGame(String name, String playTime, PlayersCount playersCount) {
         this.name = name;
         this.playTime = playTime;
-    }
-
-    public BoardGame setName(String name) {
-    return new BoardGame(name, playTime);
-    }
-
-    public BoardGame setPlayTime(String playTime) {
-        return new BoardGame(name, playTime);
+        PlayersCount clonePlayersCount = new PlayersCount();
+        clonePlayersCount.setMinPlayers(playersCount.getMinPlayers());
+        clonePlayersCount.setMaxPlayers(playersCount.getMaxPlayers());
+        this.playersCount = clonePlayersCount;
     }
 }
